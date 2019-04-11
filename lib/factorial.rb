@@ -3,11 +3,17 @@
 # Space complexity: O(1)
 def factorial(number)
   raise ArgumentError, "Number is invalid!" if number == nil
-  
-  factorial = 1
-  while number > 0
-    factorial *= number
-    number -= 1
+
+  if number >= 1
+    return number * factorial(number - 1)
+  else
+    return 1
   end
-  return factorial
+  
+  # factorial = 1
+  # while number > 0
+  #   factorial *= number
+  #   number -= 1
+  # end
+  # return factorial
 end
